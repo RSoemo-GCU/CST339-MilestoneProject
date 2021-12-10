@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html
+	xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layouts/defaultTemplate"
+>
+	<head>
+	</head>
+	
+	<body>
+		<div layout:fragment="content" class="container-xl">
+			<h1 th:text="${title}"></h1>
+			
+			<table class="Table_Overall">
+				<tr class="Table_Header">
+					<th>Name</th>
+					<th>Description</th>
+					<th>Price</th>
+					<th>Stock</th>
+					<!--<td>
+						<form action="#" th:action="@{/orders/delete/}" th:object="${order}" method="post">
+							<input name="id" type="hidden" th:value="${order.id}">
+							<input name="orderNo"type="hidden" th:value="${order.orderNo}">
+							<input name="productName"type="hidden" th:value="${order.productName}">
+							<input name="price" type="hidden" th:value="${order.price}">
+							<input name="quantity" type="hidden"  th:value="${order.quantity}">
+							<button class="btn btn-danger" type="submit" name="deleteItem">Delete</button>
+						</form>
+					</td>-->
+				</tr>
+				<tr th:each="product : ${products}">
+					<td th:text="${product.name}"></td>
+					<td th:text="${product.description}"></td>
+					<td th:text="${product.price}"></td>
+					<td th:text="${product.amountInStock}"></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+body 
+{
+	background-color: lightblue;
+	width: 100%;
+}
+
+.NavigationBar
+{
+	background-color: #0C0C0C;
+}
+
+.PageHeader, h1
+{
+	/*Font Controls*/
+	font-family: "Algerian", "Arial";
+	color: black;
+	font-size: calc(100% + 20px);
+	/*Padding Controls*/
+	padding: 1%;
+	/*Debug*/
+	/*background-color: red;*/
+}
+
+.BodyParagraph
+{
+	/*Font Controls*/
+	font-family: "Abadi Extra Light", "Arial";
+	color: black;
+	font-size: calc(5% + 20px);
+	/*Padding Controls*/
+	padding: 1%;
+	padding-right: 10%;
+	padding-left: 10%;
+	/*Debug*/
+	/*background-color: green;*/
+}
+
+.PageFooter
+{
+	/*Font Controls*/
+	font-family: "Agency FB", "Arial";
+	color: black;
+	font-size: calc(5% + 20px);
+	/*Padding Controls*/
+	padding-top: calc(1% - 5px);
+	padding-bottom: calc(1% - 14px);
+	padding-right: 10%;
+	padding-left: 10%;
+	/*Debug*/
+	/*background-color: yellow;*/
+}
+
+.Table_Header
+{
+	background-color: white;
+	
+}
+
+.Table_Overall
+{
+	/* Spacing Controls */
+	width: 100%;
+	vertical-align: top;
+	text-align: center;
+	text-indent: initial;
+    border-spacing: 2px;
+    margin-bottom: 1 rem;
+}

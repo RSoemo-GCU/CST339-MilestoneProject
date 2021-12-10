@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/defaultTemplate">
+	<head>
+	</head>
+	
+	<body>
+		<div layout:fragment="content">
+			<br>
+			<form class="form-horizontal" action="#" th:action="@{addNewproduct/save}" th:object="${UserModel}"  method="post">
+				<fieldset>
+					<!-- Form Name -->
+					<h1>Add New Product</h1>
+					
+					<!-- Text input-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="name">Name</label>  
+					  <div class="col-md-4">
+					  	<input id="name" name="name" type="text" placeholder="Example" class="form-control input-md" required="">
+					  </div>
+					</div>
+					
+					<!-- Text input-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="description">Description</label>  
+					  <div class="col-md-4">
+					  	<input id="description" name="description" type="text" placeholder="An example that tests" class="form-control input-md" required="">
+					  </div>
+					</div>
+					
+					<!-- Text input-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="price">Price</label>  
+					  <div class="col-md-4">
+					  	<input id="price" name="price" type="number" placeholder="0.00" class="form-control input-md" required="">
+					  </div>
+					</div>
+					
+					<!-- Text input-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="amountInStock">Stock</label>  
+					  <div class="col-md-4">
+					  	<input id="email" name="amountInStock" type="amountInStock" placeholder="0" class="form-control input-md" required="">
+					  </div>
+					</div>
+					
+					<!-- Button -->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="submit"></label>
+					  <div class="col-md-4">
+					    <button id="submit" name="submit" class="btn btn-primary">Create Product</button>
+					  </div>
+					</div>
+				</fieldset>
+			</form>
+			<br><br>
+		</div>
+	</body>
+</html>

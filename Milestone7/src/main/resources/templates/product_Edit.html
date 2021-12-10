@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/defaultTemplate">
+	<head>
+	</head>
+	
+	<body>
+		<div layout:fragment="content">
+			<form action="#" th:action="@{/administrationmode/saveedit}" th:object="${product}" method="post">
+				<div class="container">
+					<input type="hidden" th:field="${product.id}" name="id">
+						<div class="input-group input-group-lg">
+							<span class="input-group-text" id="inputGroup-sizing-lg">Product ID</span>
+							<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" th:field="*{id}" placeholder = "Product ID" name="id" required>
+							<div class="fieldError">
+								<p th:if="${#fields.hasErrors('id')}" th:errors="*{id}">Order Number Error</p>
+							</div>
+						</div>
+						
+						<div class="input-group input-group-lg">
+							<span class="input-group-text" id="inputGroup-sizing-lg">Product Name</span>
+							<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" th:field="*{name}" placeholder = "Product Name" name="name" required>
+							<div class="fieldError">
+								<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Product Name Error</p>
+							</div>
+						</div>
+						
+						<div class="input-group input-group-lg">
+							<span class="input-group-text" id="inputGroup-sizing-lg">Product Description</span>
+							<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" th:field="*{description}" placeholder = "Product Description" name="description" required>
+							<div class="fieldError">
+								<p th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Product Description Error</p>
+							</div>
+						</div>
+						
+						<div class="input-group input-group-lg">
+							<span class="input-group-text" id="inputGroup-sizing-lg">Price</span>
+							<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" th:field="*{price}" placeholder = "Product Price" name="price" required>
+							<div class="fieldError">
+								<p th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Product Price Error</p>
+							</div>
+						</div>
+						
+						<div class="input-group input-group-lg">
+							<span class="input-group-text" id="inputGroup-sizing-lg">Quantity</span>
+							<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" th:field="*{amountInStock}" placeholder = "Amount In Stock" name="amountInStock" required>
+							<div class="fieldError">
+								<p th:if="${#fields.hasErrors('amountInStock')}" th:errors="*{amountInStock}">Product Stock Error</p>
+							</div>
+						</div>
+						
+						<button type="submit" class="btn btn-primary">Update</button>
+					</div>
+					
+					<div th:if="${#fields.hasErrors('*')}">List of Errors</div>
+					<div th:each="err : ${#fields.errors('*')}">
+						<span th:text="${err}" class="fieldError"></span>
+					</div>
+				</div>
+			</form>
+		</div>
+	</body>
+</html> 
